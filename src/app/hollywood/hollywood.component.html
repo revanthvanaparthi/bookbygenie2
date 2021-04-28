@@ -1,0 +1,27 @@
+<div class="containerdiv">
+  <div class="box">
+    <img [src]="M.image" style="width: 100%; height: 520px;" />
+  </div>
+  <div class="box stack-top">
+    <div class="flex-container1">
+      <div>
+        <img
+          [src]="M.image"
+          [alt]="M.name"
+          width="250px"
+          height="450px"
+          style="border-radius: 25px;margin-top: 50px ;"
+        />
+      </div>
+      <div>
+        <h1 style="color: white;margin-top: 30%; font-weight: bold;font-size: x-large;">
+          {{M.name}} <br /><br />
+          &#10084; <br /><br />
+          2D &nbsp; {{M.language}} <br /><br />
+          Genre : {{M.genre}}
+        </h1>
+        <button routerLink="/Tickets">Book Your {{M.category}}</button>
+      </div>
+    </div>
+  </div>
+</div>

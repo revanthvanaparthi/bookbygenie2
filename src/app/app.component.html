@@ -1,0 +1,120 @@
+<header>
+  <table>
+    <tr>
+      <th>
+        <h3>
+          <a href=""
+            ><button style="background-color:rgba(89, 88, 100 );">
+              BookByGenie
+            </button></a
+          >
+        </h3>
+      </th>
+      <th>
+        <input
+          class="search"
+          name="search"
+          id="search"
+          type="text"
+          placeholder="Search for Movies,Events,Plays,Sports and Activities"
+        />
+      </th>
+
+      <th>
+        <select class="dropbtn" name="loc" id="loc">
+          <option *ngFor="let i of locations" value="i.id">{{i.name}}</option>
+        </select>
+      </th>
+      <th>
+  <a routerLink="/SignUp">
+        <button class="btn btn-primary" (click)="Nav(13,'SignUp')">
+          SignUp
+        </button></a>
+      </th>
+    </tr>
+  </table>
+</header>
+<div class="nav1">
+  <a routerLink="/Movies,Sports&Events"
+    ><button (click)="Nav(1,'movie')">Movies</button></a
+  >
+  <a routerLink="/Movies,Sports&Events"
+    ><button (click)="Nav(2,'stream')">Stream</button></a
+  >
+  <a routerLink="/Movies,Sports&Events"
+    ><button (click)="Nav(3,'event')">Events</button></a
+  >
+  <a href=""><button (click)="Nav(4,'play')">Plays</button></a>
+  <a href=""><button (click)="Nav(5,'sport')">Sports</button></a>
+  <a href=""><button (click)="Nav(6,'activity')">Activities</button></a>
+  <a style="margin-right: 350px;" href=""
+    ><button (click)="Nav(8,'buzz')">Buzz</button></a
+  >
+  <a href=""><button (click)="Nav(9,'lys')">ListYourShow</button></a>
+  <a href=""><button (click)="Nav(11,'offer')">Offers</button></a>
+  <a href=""><button (click)="Nav(12,'gift')">Gift Cards</button></a>
+</div>
+<router-outlet></router-outlet>
+<div *ngIf="page[0]">
+<div class="slider">
+  <figure>
+    <img
+      src="https://in.bmscdn.com/showcaseimage/eventimage/ncpa--citi-aadi-anant-16-04-2021-11-59-34-601.jpg"
+    />
+    <img
+      src="https://in.bmscdn.com/showcaseimage/eventimage/dabang-ips-12-03-2021-02-38-07-089.jpg"
+    />
+    <img
+      src="https://in.bmscdn.com/showcaseimage/eventimage/summer-express-2021-online-workshops-for-children-15-04-2021-12-07-57-009.jpg"
+    />
+    <img
+      src="https://in.bmscdn.com/showcaseimage/eventimage/sadhguru-live-with-chetan-bhagat--get-a-free-book-07-04-2021-04-24-11-530.jpg"
+    />
+    <img
+      src="https://in.bmscdn.com/showcaseimage/eventimage/ncpa--citi-aadi-anant-16-04-2021-11-59-34-601.jpg"
+    />
+  </figure>
+</div>
+<div>
+  <!--<app-signup *ngIf="page[13]"></app-signup>-->
+  <div class="main">
+    &nbsp;
+    <h3>Recommended Movies</h3>
+    <ul>
+      <li *ngFor="let i of movie">
+        <button
+          *ngIf="i.category === 'movie'&&i.visible[2]"
+          style="background-color:white;border-radius:40px"
+        >
+          <img [src]="i.image" height="300" width="200" alt="i.name" />
+          <p style="color:black">{{i.name}}</p>
+        </button>
+      </li>
+    </ul>
+    <h3>Premiers</h3>
+    <ul>
+      <li *ngFor="let i of movie">
+        <button
+          *ngIf="i.category==='stream'&&i.visible[2]"
+          style="background-color:white;border-radius:40px"
+        >
+          <img [src]="i.image" height="300" width="200" alt="i.name" />
+          <p style="color:black">{{i.name}}</p>
+        </button>
+      </li>
+    </ul>
+    <h3>Indoor/Outdoor Events</h3>
+    <ul>
+      <li *ngFor="let i of movie">
+        <button
+          *ngIf="i.category==='event'&&i.visible[2]"
+          style="background-color:white;border-radius:40px"
+        >
+          <img [src]="i.image" height="300" width="200" alt="i.name" />
+          <p style="color:black">{{i.name}}</p>
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+</div>
